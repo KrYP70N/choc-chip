@@ -23,6 +23,10 @@ const babel = require("gulp-babel");
 // image module
 const imageMin = require("gulp-imagemin");
 
+// test
+
+console.log('test');
+
 /*
   end of module
   start task

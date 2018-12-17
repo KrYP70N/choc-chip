@@ -1,6 +1,6 @@
 {
   "name": "choc-chip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "modularlize front-end frame wrok by Lab1996",
   "main": "index.js",
   "scripts": {
