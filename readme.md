@@ -1,3 +1,6 @@
+## Choc Chip
+CHOC-CHIP is the minimalist bundler for modularize frontend projects.
+
 ### Start Project
 
 - npm install
