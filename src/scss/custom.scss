@@ -1,6 +1,58 @@
 @import "./components/variable";
 
-h1 {
-  color: $color-1;
-  font-size: 36px;
+@keyframes color-move {
+  0% {
+    background: #28a745;
+  }
+  10% {
+    background: #12a40e;
+  }
+  20% {
+    background: #42a40e
+  }
+  30% {
+    background: #57a40e;
+  }
+  40% {
+    background: #81a40e;
+  }
+  50% {
+    background: #96a40e;
+  }
+  60% {
+    background: #a4820e;
+  }
+  70% {
+    background: #a4430e;
+  }
+  80% {
+    background: #a40e0e;
+  }
+  90% {
+    background: #a40e93;
+  }
+  100% {
+    background: #28a745;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  animation: color-move 20s infinite;
+  * {
+    color: #fff;
+  }
+  h1 {
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
 }

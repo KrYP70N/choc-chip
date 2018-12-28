@@ -1,6 +1,6 @@
 {
   "name": "choc-chip",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "modularlize front-end frame wrok by Lab1996",
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
     "eslint": "^5.10.0",
     "eslint-config-google": "^0.11.0",
     "eslint-plugin-compat": "^2.6.3",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.7.0",
