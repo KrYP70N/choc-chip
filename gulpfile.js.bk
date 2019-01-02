@@ -1,19 +1,18 @@
+const CHOC_CHIP = require('./choc-chip.js');
+
 const { src, dest, series, parallel, watch } = require("gulp");
 
 // common module
+exports.cc = async function() {
+  CHOC_CHIP.task.getPkg();
+}
+
+
 const concat = require("gulp-concat");
 const sourcemaps = require("gulp-sourcemaps");
 const jsUgly = require("gulp-uglify");
 
-// require
-const choc = require('./choc-chip.js');
-
-const cc_devinfo = async function() {
-  return console.log(choc.dev_info());
-}
-exports.cc_devinfo = cc_devinfo;
-
-// host files
+// gost
 const host = require("gulp-connect");
 
 const gulpHost = function(cb) {
