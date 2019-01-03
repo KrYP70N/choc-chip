@@ -6,12 +6,17 @@ const sourcemaps = require("gulp-sourcemaps");
 const jsUgly = require("gulp-uglify");
 
 // require
-const choc = require('./choc-chip.js');
+const cc = require('./cc.js');
 
-const cc_devinfo = async function() {
-  return console.log(choc.dev_info());
+const info = async function() {
+  return console.log(cc.dev_info());
 }
-exports.cc_devinfo = cc_devinfo;
+exports.info = info;
+
+const dependencies = async function() {
+  return console.log(cc.dependencies);
+}
+exports.dependencies = dependencies;
 
 // host files
 const host = require("gulp-connect");
