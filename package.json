@@ -1,69 +1,13 @@
 {
   "name": "choc-chip",
-  "version": "1.2.0",
-  "description": "modularlize front-end frame wrok by Lab1996",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KyawMyoHtut30/choc-chip.git"
-  },
-  "keywords": [
-    "choc-chip",
-    "forntend",
-    "framework",
-    "modularlize",
-    "front-end",
-    "progressive",
-    "frontend",
-    "framework"
-  ],
-  "author": "kmh (Lab1996)",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KyawMyoHtut30/choc-chip/issues"
-  },
-  "homepage": "https://github.com/KyawMyoHtut30/choc-chip#readme",
-  "devDependencies": {
-    "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "babel-eslint": "^10.0.1",
-    "commander": "^2.19.0",
-    "eslint": "^5.10.0",
-    "eslint-config-google": "^0.11.0",
-    "eslint-plugin-compat": "^2.6.3",
-    "gulp": "^4.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-connect": "^5.7.0",
-    "gulp-critical-css": "^1.0.1",
-    "gulp-eslint": "^5.0.0",
-    "gulp-html-beautify": "^1.0.1",
-    "gulp-imagemin": "^5.0.3",
-    "gulp-pug": "^4.0.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-stylelint": "^8.0.0",
-    "gulp-uglify": "^3.0.1",
-    "gulp-uglifycss": "^1.1.0",
-    "jquery-lazy": "^1.7.10",
-    "node-sass": "^4.11.0",
-    "stylelint": "^9.9.0",
-    "stylelint-checkstyle-formatter": "^0.1.2",
-    "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint-order": "^2.0.0",
-    "stylelint-scss": "^3.4.1"
-  },
+  "version": "1.2.1",
+  "description": "high performance javascript task processor for front-end development",
+  "main": "choc-chip.js",
+  "repository": "https://github.com/KrYP70N/choc-chip.git",
+  "author": "krypton <krypn22@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.6.0",
-    "bootstrap": "^4.1.3",
-    "gsap": "^2.0.2",
-    "jquery": "^3.3.1",
-    "paroller.js": "^1.4.4",
-    "popper.js": "^1.14.6",
-    "slick-carousel": "^1.8.1"
+    "express": "^4.17.1",
+    "gulp": "^4.0.2"
   }
 }

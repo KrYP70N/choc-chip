@@ -1,10 +1,20 @@
 ## Choc Chip
-CHOC-CHIP is the minimalist bundler for modularize frontend projects.
+high performance javascript task processor for front-end development
 
 ### Start Project
 
-- npm install
-- npm install -g gulp [if gulp wasn't installed on global]
-- Project Build : gulp
+- npm install / yarn
+- npm start
 
-### Local Host :: localhost:4000
+### proecssing list
+- template generating [ pug, ejs, mustache, underscore template, handlebars ]
+- style generating [ scss, sass, stylus, less, postcss ]
+- javascript generation [ es6, typescript, elm, coffee, dart ]
+- stylelint checking
+- eslint checking
+- js babel loader
+- image optimization
+
+### local host
+localhost:8080 [change port at cc.config]
+
