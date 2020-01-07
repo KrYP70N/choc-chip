@@ -15,9 +15,18 @@
       "js" : "dist/js/bootstrap.js"
     }
   ],
-  "dist" : {
+  "config" : {
     "output" : "dist",
     "minify" : true,
+    "html" : {
+      "lang" : "pug",
+      "output" : {
+        "watch" : "./src/templates/**/*.pug",
+        "pipe" : "/",
+        "minify" : false,
+        "validate" : false
+      }
+    },
     "css" : {
       "lang" : "scss",
       "stylelintrc" : true
