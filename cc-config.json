@@ -1,5 +1,5 @@
 {
-  "host" : "8080",
+  "port" : "8080",
   "output" : "dist",
   "html" : {
     "lang" : "pug",
@@ -26,19 +26,25 @@
     "watch" : "./src/assets/**/*",
     "dist" : "assets"
   },
-  "plugin" : [
-    {
-      "name" : "jquery",
-      "js" : "dist/jquery.min.js"
-    },
-    {
-      "name" : "popper.js",
-      "js" : "dist/umd/popper.js"
-    },
-    {
-      "name" : "bootstrap",
-      "css" : "dist/css/bootstrap.css",
-      "js" : "dist/js/bootstrap.js"
-    }
-  ]
+  "plugin" : {
+    "dist" : "plugin",
+    "minify" : true,
+    "beautify" : false,
+    "split mode" : false,
+    "list" : [
+      {
+        "name" : "jquery",
+        "js" : "dist/jquery.min.js"
+      },
+      {
+        "name" : "popper.js",
+        "js" : "dist/umd/popper.js"
+      },
+      {
+        "name" : "bootstrap",
+        "css" : "dist/css/bootstrap.css",
+        "js" : "dist/js/bootstrap.js"
+      }
+    ]
+  }
 }
