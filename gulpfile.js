@@ -6,6 +6,14 @@ const {
     watch
 } = require('gulp')
 
-const Template = require('./controllers/TemplateEngine')
+const TemplateChip = require('./controllers/TemplateEngine')
+const StyleChip = require('./controllers/StyleEngine')
+const JSChip = require('./controllers/JavascriptEngine')
+const MediaChip = require('./controllers/MediaEngine')
 
-exports.default = Template
+exports.default = series (
+    TemplateChip,
+    StyleChip,
+    JSChip,
+    MediaChip
+)
