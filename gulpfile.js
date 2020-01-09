@@ -1,8 +1,5 @@
 const fs =  require('fs')
 const {
-  src,
-  dest,
-  series,
   parallel,
   watch
 } = require('gulp')
@@ -12,7 +9,7 @@ const StyleChip = require('./controllers/StyleEngine')
 const JSChip = require('./controllers/JavascriptEngine')
 const MediaChip = require('./controllers/MediaEngine')
 const PluginChip = require('./controllers/PluginEngine')
-const HostEngine = require('./controllers/HostEngine')
+const HostChip = require('./controllers/HostEngine')
 
 // runner chip
 const RunnerChip = async function () {
@@ -37,7 +34,7 @@ exports.build = parallel(
 
 // default task
 exports.default = parallel (
-  HostEngine,
+  HostChip,
   RunnerChip
 )
 

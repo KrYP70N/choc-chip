@@ -40,6 +40,6 @@
   },
   "scripts": {
     "build": "gulp build",
-    "choc-chip": "gulp"
+    "cc": "gulp"
   }
 }
