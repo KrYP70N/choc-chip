@@ -1,9 +1,10 @@
+const fs =  require('fs')
 const {
-    src,
-    dest,
-    series,
-    parallel,
-    watch
+  src,
+  dest,
+  series,
+  parallel,
+  watch
 } = require('gulp')
 
 const TemplateChip = require('./controllers/TemplateEngine')
@@ -13,18 +14,32 @@ const MediaChip = require('./controllers/MediaEngine')
 const PluginChip = require('./controllers/PluginEngine')
 const HostEngine = require('./controllers/HostEngine')
 
+// runner chip
+const RunnerChip = async function () {
+  fs.readFile('./cc-config.json', 'utf-8', (err, data) => {
+    if (err) throw err
+    let config = JSON.parse(data)
+    watch(config['html']['watch'], TemplateChip)
+    watch(config['css']['watch'], StyleChip)
+    watch(config['js']['watch'], JSChip)
+    watch(config['media']['watch'], TemplateChip)
+  })
+}
+
 // build mode
-exports.build = parallel (
-    TemplateChip,
-    StyleChip,
-    JSChip,
-    MediaChip,
-    PluginChip
+exports.build = parallel(
+  TemplateChip,
+  StyleChip,
+  JSChip,
+  MediaChip,
+  PluginChip
 )
 
-export.watch = async function () {
-    console.log('hi')
-}
+// default task
+exports.default = parallel (
+  HostEngine,
+  RunnerChip
+)
 
 // exported chip
 exports.MediaChip = MediaChip

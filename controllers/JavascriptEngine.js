@@ -6,6 +6,8 @@ const babel = require('gulp-babel')
 const coffee = require('gulp-coffee')
 const typescript = require('gulp-typescript')
 
+const host = require('gulp-connect')
+
 const ScriptEngine = async function () { 
   fs.readFile('./cc-config.json', 'utf-8', (err, data) => {
     if (err) throw err
@@ -18,16 +20,19 @@ const ScriptEngine = async function () {
           presets: ['@babel/env']
         }))
         .pipe(dest(`${res['output']}/${js['dist']}`))
+        .pipe(host.reload())
     } else if (js['lang'] === 'coffee' && watch.endsWith('.coffee')) {
       return gulp.src(watch)
         .pipe(coffee({bare: true}))
         .pipe(dest(`${res['output']}/${js['dist']}`))
+        .pipe(host.reload())
     } else if (js['lang'] === 'typescript' && watch.endsWith('.ts')) {
       return gulp.src(watch)
         .pipe(typescript({
             noImplicitAny: true
         }))
-        .pipe(dest(`${res['output']}/${js['dist']}`));
+        .pipe(dest(`${res['output']}/${js['dist']}`))
+        .pipe(host.reload())
     } else if (js['lang'] === 'elm' && watch.endsWith('.elm')) {
       return console.log('.eml will be support in sooner time :)')
     } else if (js['lang'] === 'dart' && watch.endsWith('.dart')) {

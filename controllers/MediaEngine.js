@@ -3,6 +3,7 @@ const gulp = require('gulp')
 const { dest } = require('gulp')
 
 const assets = require('gulp-image')
+const host = require('gulp-connect')
 
 const MediaEngine = async function () {
   fs.readFile('./cc-config.json', 'utf-8', (err, data) => {
@@ -12,7 +13,8 @@ const MediaEngine = async function () {
     let watch = media['watch']
     return gulp.src(watch)
       .pipe(assets())
-      .pipe(dest(`${res['output']}/${media['dist']}`));
+      .pipe(dest(`${res['output']}/${media['dist']}`))
+      .pipe(host.reload())
   })
 }
 

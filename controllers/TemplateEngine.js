@@ -6,6 +6,7 @@ const pug = require('gulp-pug')
 const ejs = require('gulp-ejs')
 const mustache = require('gulp-mustache')
 const underscore = require('gulp-underscore-template')
+const host = require("gulp-connect");
 
 const TemplateEngine = async function () {
   fs.readFile('./cc-config.json', 'utf-8', (err, data) => {
@@ -17,21 +18,25 @@ const TemplateEngine = async function () {
       return gulp.src(watch)
         .pipe(pug())
         .pipe(dest(`${res['output']}/${html['dist']}`))
+        .pipe(host.reload())
     } else if (html['lang'] === 'ejs' && watch.endsWith('.ejs')) {
       return gulp.src(watch)
         .pipe(ejs({ title: 'gulp-ejs' }))
         .pipe(rename({extname : '.html'}))
         .pipe(dest(`${res['output']}/${html['dist']}`))
+        .pipe(host.reload())
     } else if (html['lang'] === 'mustache' && watch.endsWith('.mustache')) {
       return gulp.src(watch)
         .pipe(mustache())
         .pipe(rename({extname : '.html'}))
         .pipe(dest(`${res['output']}/${html['dist']}`))
+        .pipe(host.reload())
     } else if (html['lang'] === 'underscore' && watch.endsWith('.underscore')) {
       return gulp.src(watch)
         .pipe(underscore())
         .pipe(rename({extname : '.html'}))
         .pipe(dest(`${res['output']}/${html['dist']}`))
+        .pipe(host.reload())
     } else {
       return console.log('your template format is not supported or watch extension is not correct! \nPlease check your cc-config.json')
     }
