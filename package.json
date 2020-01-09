@@ -1,6 +1,6 @@
 {
   "name": "choc-chip",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "high performance javascript task processor for front-end development",
   "main": "choc-chip.js",
   "repository": "https://github.com/KrYP70N/choc-chip.git",

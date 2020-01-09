@@ -6,6 +6,7 @@ sass.compiler = require('node-sass')
 const less = require('gulp-less')
 const stylus = require('gulp-stylus')
 const host = require('gulp-connect')
+const gulpif = require('gulp-if')
 
 const StyleEngine = async function () {
   fs.readFile('./cc-config.json', 'utf-8', (err, data) => {
@@ -13,24 +14,19 @@ const StyleEngine = async function () {
     let res = JSON.parse(data)
     let css = res['css']
     let watch = css['watch']
-    if ((css['lang'] === 'scss' && watch.endsWith('.scss')) || css['lang'] === 'sass' && watch.endsWith('.sass')) {
-      return gulp.src(watch)
-        .pipe(sass().on('error', sass.logError))
-        .pipe(dest(`${res['output']}/${css['dist']}`))
-        .pipe(host.reload())
-    } else if (css['lang'] === 'less' && watch.endsWith('.less')) {
-      return gulp.src(watch)
-        .pipe(less())
-        .pipe(dest(`${res['output']}/${css['dist']}`))
-        .pipe(host.reload())
-    } else if (css['lang'] === 'styl' && watch.endsWith('.styl')) {
-      return gulp.src(watch)
-        .pipe(stylus())
-        .pipe(dest(`${res['output']}/${css['dist']}`))
-        .pipe(host.reload())
-    } else {
-      return console.log('your style lang is not supported or watch extension is not correct! \nPlease check your cc-config.json')
-    }
+    let validWatch = watch.filter(ext => !(ext.endsWith(css['lang'])))
+
+    // validate rule
+    if (validWatch.length > 0) return console.log('watch and lang is not match.\nPlease check at cc-config.json')
+
+    if (!['scss', 'sass', 'less', 'styl'].includes(css['lang'])) return console.log('Sorry, your lang is not supported right now!')
+
+    return gulp.src(watch)
+      .pipe(gulpif(css['lang'] === 'scss' || css['lang'] === 'sass', sass().on('error', sass.logError)))
+      .pipe(gulpif(css['lang'] === 'less', less()))
+      .pipe(gulpif(css['lang'] === 'styl', stylus()))
+      .pipe(dest(`${res['output']}/${css['dist']}`))
+      .pipe(host.reload())
   })
 }
 

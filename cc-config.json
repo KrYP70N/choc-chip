@@ -3,14 +3,14 @@
   "output" : "dist",
   "html" : {
     "lang" : "pug",
-    "watch" : "./src/templates/**/*.pug",
+    "watch" : ["./src/templates/**/*.pug", "!./src/templates/**/*.ignore.pug"],
     "dist" : "",
     "minify" : false,
     "validate" : false
   },
   "css" : {
-    "lang" : "scss",
-    "watch" : "./src/style/**/*.scss",
+    "lang" : "sass",
+    "watch" : ["./src/style/**/*.sass"],
     "dist" : "style",
     "minify" : false,
     "validate" : false
