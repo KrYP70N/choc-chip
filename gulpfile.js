@@ -22,7 +22,7 @@ const RunnerChip = async function () {
     watch(config['html']['watch'], TemplateChip)
     watch(config['css']['watch'], StyleChip)
     watch(config['js']['watch'], JSChip)
-    watch(config['media']['watch'], TemplateChip)
+    watch(config['media']['watch'], MediaChip)
   })
 }
 
