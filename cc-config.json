@@ -1,43 +1,50 @@
 {
-  "host" : "8080",
-  "plugin" : [
-    {
-      "name" : "jquery",
-      "js" : "dist/jquery.min.js"
-    },
-    {
-      "name" : "popper.js",
-      "js" : "dist/umd/popper.js"
-    },
-    {
-      "name" : "bootstrap",
-      "css" : "dist/css/bootstrap.css",
-      "js" : "dist/js/bootstrap.js"
-    }
-  ],
-  "config" : {
-    "output" : "dist",
+  "port" : "8080",
+  "output" : "dist",
+  "html" : {
+    "lang" : "pug",
+    "watch" : "./src/templates/**/*.pug",
+    "dist" : "",
+    "minify" : false,
+    "validate" : false
+  },
+  "css" : {
+    "lang" : "scss",
+    "watch" : "./src/style/**/*.scss",
+    "dist" : "style",
+    "minify" : false,
+    "validate" : false
+  },
+  "js" : {
+    "lang" : "babel",
+    "watch" : "./src/script/**/*.babel",
+    "dist" : "js",
+    "minify" : false,
+    "validate" : false
+  },
+  "media" : {
+    "watch" : "./src/assets/**/*",
+    "dist" : "assets"
+  },
+  "plugin" : {
+    "dist" : "plugin",
     "minify" : true,
-    "html" : {
-      "lang" : "pug",
-      "output" : {
-        "watch" : "./src/templates/**/*.pug",
-        "pipe" : "/",
-        "minify" : false,
-        "validate" : false
+    "beautify" : false,
+    "split mode" : false,
+    "list" : [
+      {
+        "name" : "jquery",
+        "js" : "dist/jquery.min.js"
+      },
+      {
+        "name" : "popper.js",
+        "js" : "dist/umd/popper.js"
+      },
+      {
+        "name" : "bootstrap",
+        "css" : "dist/css/bootstrap.css",
+        "js" : "dist/js/bootstrap.js"
       }
-    },
-    "css" : {
-      "lang" : "scss",
-      "stylelintrc" : true
-    },
-    "javascript" : {
-      "lang" : "es6",
-      "eslint" : true,
-      "bable" : true
-    },
-    "image optimize" : {
-      "level" : 5
-    }
+    ]
   }
 }

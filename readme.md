@@ -8,7 +8,7 @@ high performance javascript task processor for front-end development
 
 ### proecssing list
 - template generating [ pug, ejs, mustache, underscore template, handlebars ]
-- style generating [ scss, sass, stylus, less, postcss ]
+- style generating [ scss, sass, stylus, less ]
 - javascript generation [ es6, typescript, elm, coffee, dart ]
 - stylelint checking
 - eslint checking
