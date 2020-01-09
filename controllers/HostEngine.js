@@ -9,7 +9,7 @@ const HostEngine = async function (cb) {
     if (err) throw err
     let port = JSON.parse(data)['port']
     host.server({
-      root: 'dist',
+      root: JSON.parse(data)['output'],
       port: port,
       livereload: true
     }, cb);
